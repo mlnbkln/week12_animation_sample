@@ -1,6 +1,8 @@
 import 'package:basic_animations/gallery_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class SimpleSection extends StatefulWidget {
   final List<String>? imageUrls;
 
@@ -34,19 +36,24 @@ class _SimpleSectionState extends State<SimpleSection> {
                   },
                   child: Text(show ? 'Hide Guest' : 'Show Guest'),
                 ),
-                OutlinedButton(
-                  child: Text('Show Gallery'),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => GalleryScreen(widget.imageUrls),
-                      ),
-                    );
-                  },
+                DropdownButton(
+                  hint: Text("Gallery",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                  ),
+                  items: dropdownItems,
+                  onChanged: (value) { Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => GalleryScreen(widget.imageUrls),
+                    ),
+                  );
+                      },
                 ),
-              ],
-            ),
+            ]),
             SizedBox(
               height: show ? 150 : 0,
               width: 150,
@@ -58,3 +65,4 @@ class _SimpleSectionState extends State<SimpleSection> {
     );
   }
 }
+

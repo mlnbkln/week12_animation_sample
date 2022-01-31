@@ -79,7 +79,7 @@ class _ManualSectionState extends State<ManualSection> with SingleTickerProvider
               ],
             ),
             SizedBox(
-              height: _heightAnimation.value,
+              height: show ? 150 : 0,
               width: 150,
               child: Image.network(widget.imageUrls![0]),
             ),

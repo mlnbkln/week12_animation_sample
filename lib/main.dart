@@ -63,3 +63,12 @@ Map<String, List<String>> characterImages = {
     'https://static.wikia.nocookie.net/disney/images/1/1c/Profile_-_Eeyore.png/revision/latest?cb=20210516060155',
   ],
 };
+
+List<DropdownMenuItem<String>> get dropdownItems{
+  List<DropdownMenuItem<String>> menuItems = [
+    DropdownMenuItem(child: Text("Photo 1"), value: "Photo 1"),
+    DropdownMenuItem(child: Text("Photo 2"), value: "Photo 2"),
+    DropdownMenuItem(child: Text("Photo 3"), value: "Photo 3"),
+  ];
+  return menuItems;
+}

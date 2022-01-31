@@ -1,5 +1,6 @@
 import 'package:basic_animations/gallery_screen.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class BuilderSection extends StatefulWidget {
   final List<String>? imageUrls;
@@ -79,15 +80,18 @@ class _BuilderSectionState extends State<BuilderSection> with SingleTickerProvid
               ],
             ),
             AnimatedBuilder(
-                animation: _heightAnimation,
-                child: Image.network(widget.imageUrls![0]),
-                builder: (context, child) {
-                  return SizedBox(
-                    height: _heightAnimation.value,
-                    width: 150,
+                animation: _controller,
+                builder: (_, child) {
+                  return Transform.rotate(
+                    angle: _controller.value * 2 * pi,
                     child: child,
                   );
-                }),
+                },
+              child: Image.network(widget.imageUrls![0],
+                height: _heightAnimation.value,
+                width: 150,
+              ),
+            ),
           ],
         ),
       ),

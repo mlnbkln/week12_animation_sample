@@ -26,7 +26,7 @@ class GalleryScreen extends StatelessWidget {
                   child: Hero(
                     tag: 'rabbit hero',
                   child: FadeInImage(
-                    placeholder: AssetImage('images/placeholder.jpeg'),
+                    placeholder: AssetImage('images/bear.jpeg'),
                     image: NetworkImage(imageUrls![0]),
                   ),
                 ),
@@ -36,7 +36,7 @@ class GalleryScreen extends StatelessWidget {
               child: SizedBox(
               height: 200,
                 child: FadeInImage(
-                  placeholder: AssetImage('images/placeholder.jpeg'),
+                  placeholder: AssetImage('images/bear.jpeg'),
                   image: NetworkImage(imageUrls![1]),
                 ),
               ),
@@ -45,7 +45,7 @@ class GalleryScreen extends StatelessWidget {
         child: SizedBox(
           height: 200,
             child: FadeInImage(
-              placeholder: AssetImage('images/placeholder.jpeg'),
+              placeholder: AssetImage('images/bear.jpeg'),
               image: NetworkImage(imageUrls![2]),
             ),
           ),
